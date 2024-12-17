@@ -19,7 +19,6 @@ public class ProdutoController {
         this.repository = repository;
     }
 
-    // Cria um novo produto
     @PostMapping
     public ResponseEntity<ProdutoDTO> create(@Valid @RequestBody ProdutoDTO produtoDTO) {
         Produto produto = new Produto();
@@ -39,10 +38,9 @@ public class ProdutoController {
                 savedProduto.getObservacoes()
         );
 
-        return ResponseEntity.status(201).body(savedProdutoDTO);  // Retorna o status de criacao concluida
+        return ResponseEntity.status(201).body(savedProdutoDTO);
     }
 
-    // Cria vários produtos
     @PostMapping("/batch")
     public ResponseEntity<List<ProdutoDTO>> createBatch(@Valid @RequestBody List<ProdutoDTO> produtosDTO) {
         List<Produto> produtos = produtosDTO.stream()
@@ -69,10 +67,9 @@ public class ProdutoController {
                 ))
                 .toList();
 
-        return ResponseEntity.status(201).body(savedProdutosDTO);  // Retorna o status de criacao concluida
+        return ResponseEntity.status(201).body(savedProdutosDTO);
     }
 
-    // Listar todos os produtos
     @GetMapping
     public List<ProdutoDTO> listAll() {
         List<Produto> produtos = repository.findAll();
@@ -87,7 +84,6 @@ public class ProdutoController {
                 .toList();
     }
 
-    // Obter produto por ID
     @GetMapping("/{id}")
     public ResponseEntity<ProdutoDTO> getById(@PathVariable Long id) {
         return repository.findById(id)
@@ -101,7 +97,6 @@ public class ProdutoController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // Atualizar produto pelo ID
     @PutMapping("/{id}")
     public ResponseEntity<ProdutoDTO> update(@PathVariable Long id, @Valid @RequestBody ProdutoDTO produtoDTO) {
         Produto produto = repository.findById(id)
@@ -123,17 +118,16 @@ public class ProdutoController {
                 updatedProduto.getObservacoes()
         );
 
-        return ResponseEntity.ok(updatedProdutoDTO);  // Retorna o produto atualizado
+        return ResponseEntity.ok(updatedProdutoDTO);
     }
 
-    // Deletar produto pelo ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         if (!repository.existsById(id)) {
-            return ResponseEntity.notFound().build();  // Retorna 404 se o produto não existir
+            return ResponseEntity.notFound().build();
         }
 
-        repository.deleteById(id);  // Deleta o produto
+        repository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 }
