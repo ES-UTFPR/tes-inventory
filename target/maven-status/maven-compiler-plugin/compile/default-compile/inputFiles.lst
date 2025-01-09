@@ -1,6 +1,6 @@
-D:\Projetos\Api\Crud\src\main\java\com\example\demo\controllers\ProdutoController.java
-D:\Projetos\Api\Crud\src\main\java\com\example\demo\DemoApplication.java
-D:\Projetos\Api\Crud\src\main\java\com\example\demo\repositories\ProdutoRepository.java
-D:\Projetos\Api\Crud\src\main\java\com\example\demo\CustomExceptionHandler.java
-D:\Projetos\Api\Crud\src\main\java\com\example\demo\dtos\ProdutoDTO.java
-D:\Projetos\Api\Crud\src\main\java\com\example\demo\entities\Produto.java
+C:\projects\java\inventory\src\main\java\tes\project\inventory\domain\product\controller\ProductController.java
+C:\projects\java\inventory\src\main\java\tes\project\inventory\domain\product\dto\ProductDTO.java
+C:\projects\java\inventory\src\main\java\tes\project\inventory\domain\product\exception\CustomExceptionHandler.java
+C:\projects\java\inventory\src\main\java\tes\project\inventory\domain\product\Product.java
+C:\projects\java\inventory\src\main\java\tes\project\inventory\domain\product\repository\ProductRepository.java
+C:\projects\java\inventory\src\main\java\tes\project\inventory\InventoryApplication.java
