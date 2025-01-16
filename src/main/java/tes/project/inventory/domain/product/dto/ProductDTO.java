@@ -4,6 +4,10 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public record ProductDTO(
+    @NotNull(message = "Product name cannot be null")
+    @Size(min = 3, max = 100, message = "Name should have between 3 and 100 characters")
+    String name,
+
     @NotNull(message = "Product description cannot be null")
     @Size(min = 3, max = 100, message = "Description should have between 3 and 100 characters")
     String description,
@@ -13,10 +17,10 @@ public record ProductDTO(
     String category,
 
     @NotNull(message = "Quantity cannot be null")
-    int quantity,
+    Integer quantity,
 
     @NotNull(message = "Price cannot be null")
-    double price,
+    Integer price,
 
     @Size(max = 500, message = "Notes can have a maximum of 500 characters")
     String notes

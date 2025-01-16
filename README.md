@@ -23,7 +23,7 @@ Creates a new product.
   "description": "string",
   "category": "string",
   "quantity": "integer",
-  "price": "number",
+  "price": "integer",
   "notes": "string"
 }
 ```
@@ -45,10 +45,11 @@ Creates multiple products in a single request.
 ```json
 [
   {
+    "name": "string",
     "description": "string",
     "category": "string",
     "quantity": "integer",
-    "price": "number",
+    "price": "integer",
     "notes": "string"
   }
 ]
@@ -74,10 +75,11 @@ Updates the details of an existing product.
 
 ```json
 {
+  "name": "string",
   "description": "string",
   "category": "string",
   "quantity": "integer",
-  "price": "number",
+  "price": "integer",
   "notes": "string"
 }
 ```
@@ -121,10 +123,11 @@ Retrieves a list of all products.
 ```json
 [
   {
+    "name": "string",
     "description": "string",
     "category": "string",
     "quantity": "integer",
-    "price": "number",
+    "price": "integer",
     "notes": "string"
   }
 ]
@@ -151,10 +154,11 @@ Retrieves a product by its ID.
 
 ```json
 {
+  "name": "string",
   "description": "string",
   "category": "string",
   "quantity": "integer",
-  "price": "number",
+  "price": "integer",
   "notes": "string"
 }
 ```

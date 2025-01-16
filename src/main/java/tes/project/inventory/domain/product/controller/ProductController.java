@@ -19,7 +19,7 @@ public class ProductController {
 
     @PostMapping
     public ResponseEntity<ProductDTO> create(@Valid @RequestBody ProductDTO data) {
-        Product product = new Product(data.description(), data.category(), data.quantity(), data.price(), data.notes());
+        Product product = new Product(data.name(), data.description(), data.category(), data.quantity(), data.price(), data.notes());
 
         this.repository.save(product);
 
@@ -30,6 +30,7 @@ public class ProductController {
     public ResponseEntity<Void> createBatch(@Valid @RequestBody List<ProductDTO> products) {
         List<Product> productEntities = products.stream()
                 .map(data -> new Product(
+                        data.name(),
                         data.description(),
                         data.category(),
                         data.quantity(),
@@ -75,6 +76,7 @@ public class ProductController {
 
         List<ProductDTO> productDTOs = products.stream()
                 .map(product -> new ProductDTO(
+                        product.getName(),
                         product.getDescription(),
                         product.getCategory(),
                         product.getQuantity(),
@@ -93,6 +95,7 @@ public class ProductController {
 
         return ResponseEntity.ok(
             new ProductDTO(
+                product.getName(),
                 product.getDescription(),
                 product.getCategory(),
                 product.getQuantity(),
