@@ -1,6 +1,8 @@
 tes\project\inventory\domain\product\repository\ProductRepository.class
 tes\project\inventory\InventoryApplication.class
+tes\project\inventory\CorsConfig$1.class
 tes\project\inventory\domain\product\Product.class
 tes\project\inventory\domain\product\exception\CustomExceptionHandler.class
 tes\project\inventory\domain\product\dto\ProductDTO.class
+tes\project\inventory\CorsConfig.class
 tes\project\inventory\domain\product\controller\ProductController.class
